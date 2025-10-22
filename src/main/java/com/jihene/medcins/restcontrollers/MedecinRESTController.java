@@ -38,7 +38,7 @@ public class MedecinRESTController {
 public Medecin updateMedecin(@RequestBody Medecin medecin) {
 return medecinService.updateMedecin(medecin);
 }
-@RequestMapping(value="/medscat/{idSep}",method = RequestMethod.GET)
+@RequestMapping(value="/medssep/{idSep}",method = RequestMethod.GET)
 public List<Medecin> getMedecinsBySepId(@PathVariable("idSep") Long idSep) {
 return medecinService.findBySpecialiteIdSep(idSep);
 }
@@ -47,6 +47,11 @@ public void deleteMedecin(@PathVariable("id") Long id)
 {
 medecinService.deleteMedecinById(id);
 }
+
+@RequestMapping(value="/medsByName/{nom}",method = RequestMethod.GET) 
+ public List<Medecin> findByNommedecinContains(@PathVariable("nom") String nom) { 
+  return medecinService.findByNomMedecinContains(nom); 
+ } 
 
 
 }

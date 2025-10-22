@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import com.jihene.medcins.entities.Medecin;
+import com.jihene.medcins.entities.Specialite;
 
 @SpringBootApplication
 public class MedcinsApplication implements CommandLineRunner{
@@ -17,7 +18,7 @@ public class MedcinsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		repositoryRestConfiguration.exposeIdsFor(Medecin.class);
+		repositoryRestConfiguration.exposeIdsFor(Medecin.class,Specialite.class);
 	}
 
 }
