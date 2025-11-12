@@ -12,6 +12,7 @@ import com.jihene.medcins.repos.MedecinRepository;
 public class MedecinServiceImpl implements MedecinService{
     @Autowired
     MedecinRepository medecinRepository;
+    //@PreAuthorize("hasAuthority('ADMIN')")
     @Override
     public Medecin saveMedecin(Medecin m) {
         return medecinRepository.save(m);
